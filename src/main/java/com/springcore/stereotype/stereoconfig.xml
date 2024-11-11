@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"       
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ https://www.springframework.org/schema/util/spring-util.xsd
+ ">
+ 
+ <context:component-scan base-package="com.springcore.stereotype"/>
+ 
+ <!-- It scan all class of this package, it's sub-class and sub-package, it is necessary for working of @component -->
+ 
+ <!-- Create stand alone list -->
+ <util:list list-class="java.util.Vector" id = "city1">
+ <value>Delhi</value>
+ <value>Lucknow</value>
+ <value>Azamgarh</value>
+ <value>Mau</value>
+ <value>Gonda</value>
+ </util:list>
+ 
+ <util:map map-class = "java.util.TreeMap" id="map">
+ <entry key="Sarvesh" value="1234"/>
+ <entry key="Sahishnu" value="12345"/>
+ <entry key="Ayush" value="123456"/>
+ <entry key="Harsh" value="1234567"/>
+ </util:map>
+ 
+ <bean name = "teacher" class = "com.springcore.stereotype.Teacher" scope = "prototype"> 
+ <property name="tname" value="Radha"/>
+ </bean>
+ 
+ <!-- above is xml technique of defining the scope, we have to pass class,name and scope , It can also be done using 
+ @Scope annotation-->
+ 
+<!--  the working of @component and bean tag is same i.e. creating object of the mention class, but in @Component it can be done using
+ annotation, while in bean we have to mention -->
+ 
+ </beans>

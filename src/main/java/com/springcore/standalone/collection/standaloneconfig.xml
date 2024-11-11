@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"         
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ https://www.springframework.org/schema/util/spring-util.xsd
+ ">
+ 
+ <!-- we have to make stand alone list using util schema which is declared globally and can be used locally -->
+ <!-- stand alone list -->
+ 
+ <util:list list-class="java.util.LinkedList" id = "myfriend">
+ <value>Aman</value>
+ <value>Chaman</value>
+ <value>Rohit</value>
+ <value>Mohit</value>
+ <value>Ram</value>
+ <value>Shyam</value>
+ </util:list>
+ 
+ <!-- Stand alone map -->
+ <util:map map-class="java.util.TreeMap" id="coursefee">
+ <entry key = "Spring Framework" value = "8000"/>
+ <entry key = "Django Framework" value = "5000"/>
+ <entry key = "Hibernate Framework" value = "2000"/>
+ <entry key = "Spring Boot Framework" value = "10000"/>
+ </util:map>
+ 
+<!--  stand alone properties, it is also collection of key value pair, here we don't have to mention class b/c it refer
+ to properties class by default -->
+ 
+<util:properties id="prop">
+<prop key="driver">com.mysql.jdbc.Driver</prop>
+<prop key="username">Sarvesh</prop>
+<prop key="password">Sarvesh@123</prop>
+</util:properties>
+ 
+ <bean name = "person" class = "com.springcore.standalone.collection.Person">
+<!--  <property name="friends">
+ <ref bean = "myfriend"/>
+ </property> -->
+ <property name="friends" ref="myfriend"/>
+ <property name="feestructure" ref = "coursefee"/>
+ <property name="properties" ref = "prop"></property>
+ </bean>
+ 
+ 
+ 
+ </beans>

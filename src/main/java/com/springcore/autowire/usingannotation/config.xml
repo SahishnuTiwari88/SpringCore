@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"       
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+  <context:annotation-config/>
+<!--  used to enable all annotation b/c by default annotation are disable -->
+ 
+<bean name = "address" class = "com.springcore.autowire.usingannotation.Address">
+<property name="street" value = "New Street"/>
+<property name="city" value = "Delhi"/>
+</bean>
+
+<bean name = "address1" class = "com.springcore.autowire.usingannotation.Address">
+<property name="street" value = "Second Street"/>
+<property name="city" value = "Lucknow"/>
+</bean>
+
+<!-- <bean name = "emp" class = "com.springcore.autowire.usingxml.Emp" autowire="byName"/> -->
+
+<!-- <bean name = "emp" class = "com.springcore.autowire.usingxml.Emp" autowire="byType"/> -->
+
+<bean name = "emp" class = "com.springcore.autowire.usingannotation.Emp" /> 
+
+<!-- constructor will call the parameterized constructor -->
+ 
+ </beans>
+ 
+ <!-- Done using setter injection for property -->

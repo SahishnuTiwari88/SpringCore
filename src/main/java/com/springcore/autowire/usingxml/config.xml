@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"       
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+<bean name = "address" class = "com.springcore.autowire.usingxml.Address">
+<property name="street" value = "New Street"/>
+<property name="city" value = "Lucknow"/>
+</bean>
+
+<!-- <bean name = "address1" class = "com.springcore.autowire.usingxml.Address">
+<property name="street" value = "New Street"/>
+<property name="city" value = "Lucknow"/>
+</bean>
+ -->
+   <!-- <bean name = "emp" class = "com.springcore.autowire.usingxml.Emp" autowire="byName"/>   -->
+ 
+ <!-- First it will go to the mention class to create its object(Emp) and check we need Address(Data type) whose variable name is address
+ and then in configuration file it check do we have address bean i.e.(name=address), if found then auto inject -->
+
+  <!-- <bean name = "emp" class = "com.springcore.autowire.usingxml.Emp" autowire="byType"/> -->  
+ 
+<!--  it will check the type (data type) instead of the name i.e.(type=Address)will be checked, if type is found in configuration file 
+ it will be auto injected -->
+
+  <bean name = "emp" class = "com.springcore.autowire.usingxml.Emp" autowire="constructor"/> 
+ 
+<!-- autowire constructor, will call the parameterized constructor in the class-->
+ 
+ </beans>
+ 
+ <!-- byname,bytype Done using setter injection for property -->

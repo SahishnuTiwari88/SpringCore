@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"       
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <bean name = "certi" class = "com.springcore.constructorinjection.Certificate" c:certinum = "QWAS43567" c:name = "Android Development"/>
+<!-- <constructor-arg value = "CER78213"/>
+<constructor-arg value = "Blockchain Development"/>
+</bean> -->
+ 
+<bean name = "person1" class = "com.springcore.constructorinjection.Person" c:name = "Shri Ram" c:personId = "13" c:certi-ref = "certi">
+<constructor-arg>
+<list>
+
+ <value>Java</value>
+ <value>python</value>
+ <value>Cpp</value>
+ <value>.Net</value>
+ <value>MicroServices</value>
+ <null/>
+
+</list>
+
+</constructor-arg>
+
+<!-- <constructor-arg>
+<value>Sahishnu Tiwari</value>
+</constructor-arg>
+<constructor-arg>
+<value>10</value>
+</constructor-arg>  both will work-->
+
+<!-- <constructor-arg value = "Sarvesh"/>
+<constructor-arg value = "11"/> -->
+
+
+<!-- <constructor-arg ref = "certi"/>  it can also be used or below one-->
+<!-- <constructor-arg>
+<ref bean="certi"/>
+</constructor-arg> -->
+
+</bean>
+
+<bean name = "add" class = "com.springcore.constructorinjection.Addition">
+<constructor-arg value = "22" index = "1"/>
+<constructor-arg value = "40" index = "0"/>
+<!-- with the help of index we can decide where we want to place our value like 40 assign to a and 22 to b -->
+</bean>
+
+ 
+ </beans>

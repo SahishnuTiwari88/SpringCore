@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="Emp" class="com.sprincore.collections.Emp">
+		<property name="name" value="Sarvesh" />
+
+		<!-- LIST -->
+		<property name="phone">
+			<list>
+				<value>8808977159</value>
+				<value>880897</value>
+				<value>880897234</value>
+				<value>880897767</value>
+				<value>8808977909</value>
+				<null/>
+			</list>
+		</property>
+		
+		<!-- SET -->
+		<property name="addresses">
+			<set>
+				<value>Mumbai</value>
+				<value>Delhi</value>
+				<value>Mau</value>
+				<value>Lucknow</value>
+				<value>Varanasi</value>
+				<null/>
+			</set>
+		</property>
+		<!-- PROPS -->
+		<property name="props">
+			<props>
+				<prop key="database">JDBC</prop>
+				<prop key="platform">MySql</prop>
+				<prop key="UserName">Sarvesh</prop>
+				<prop key="pass">root123</prop>
+			</props>
+		</property>
+		<!-- MAP -->
+		<property name="courses">
+			<map>
+				<entry key="Mongo certification" value="4 months"/>
+				<entry key="Java" value = "3 months"/>
+				<entry key="python" value = "5 months"/>
+				<entry key="Cloud" value = "7 months"/>
+			</map>
+		</property>
+	</bean>
+
+
+
+</beans>

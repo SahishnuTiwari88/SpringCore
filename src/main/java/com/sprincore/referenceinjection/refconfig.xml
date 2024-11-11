@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"       
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <bean name = "Cref" class= "com.sprincore.referenceinjection.C">
+ <property name = "z" value ="10"/>
+ </bean>
+ 
+ <bean name="Bref" class = "com.sprincore.referenceinjection.B">
+ <property name="y" value = "60"/>
+ <property name="oc">
+ <ref bean="Cref"/>
+ </property>
+ </bean>
+ 
+ <!-- <bean name = "Aref" class = "com.sprincore.referenceinjection.A" >
+  <property name="x" value = "40"/>
+ <property name="ob">
+ <ref bean = "Bref"/>//referance of bean in ob
+ </property>  -->
+ 
+ <!-- <bean name = "Aref" class = "com.sprincore.referenceinjection.A" >
+  <property name="x" value = "40"/>
+ 
+ <property name="ob"  ref = "Bref"/>
+ 
+ </bean>  -->
+ 
+ <bean name = "Aref" class = "com.sprincore.referenceinjection.A" p:x = "20" p:ob-ref = "Bref"/>
+ 
+ </beans>
